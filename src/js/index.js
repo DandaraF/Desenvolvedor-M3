@@ -1,5 +1,3 @@
-// console.log("Dev m3");
-
 function requestProducts() {
   const url = "http://localhost:5000/products";
   const request = new XMLHttpRequest();
@@ -8,18 +6,20 @@ function requestProducts() {
   return request.responseText;
 }
 
-function getProducts() {
+function getAllProducts() {
   data = requestProducts();
   products = JSON.parse(data);
   return products;
 }
+function replaceSeparator(price) {
+  return price.toString().replace(".", ",");
+}
 
 function listProducts() {
-  products = getProducts();
-  console.log(products);
+  products = getAllProducts();
   const teste = products.map((produto, index) => {
     return `
-    <div class="card-product">
+    <div class="card-product" ${index}>
       <img class="img-product" src=".${produto.image}"/>
       <p class="name-product">${produto.name}</p>
       <p class="price-product">R$ ${replaceSeparator(
@@ -34,10 +34,6 @@ function listProducts() {
     `;
   });
   document.querySelector(".container-products").innerHTML = teste.join("");
-}
-
-function replaceSeparator(price) {
-  return price.toString().replace(".", ",");
 }
 
 listProducts();
