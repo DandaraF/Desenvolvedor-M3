@@ -2,33 +2,73 @@
 @import "./mixin.scss";
 @import "./variables.scss";
 
-html{
-  overflow-x: hidden;
-}
+html {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  // overflow-x: hidden;
 
-header{
-  border-bottom: 2px solid #C7C7C7;
-  padding: 16px 27px;
-  .container_header{
-    @include simple-flex(space-between, center);
+  header {
+    border-bottom: 2px solid #c7c7c7;
+    padding: 16px 27px;
+    .container-header {
+      @include simple-flex(space-between, center);
+      width: 100%;
+    }
+  }
+
+  main {
+    .page-container {
+      @include simple-flex(center, center, column);
+      box-sizing: border-box;
+      width: 100%;
+      padding: 24px 16px 39px;
+      flex: 1 0 auto;
+      .title-section {
+        font-size: 32px;
+        color: $text-color_section;
+        padding-bottom: 12px;
+      }
+      .menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        .item-menu {
+          color: $text-color-secondary;
+          text-align: center;
+          padding: 8px 0;
+          font-size: 24px;
+          border: 1px solid $background-secondary;
+          width: 100%;
+        }
+        .remove-border {
+          border-right: none;
+        }
+      }
+
+      // ////////////////////
+      .btn_more {
+        @include font-face(Bold, 700);
+        background-color: $background-terciary;
+        color: $text-color-terciary;
+        size: 1.4rem;
+        padding: 8px 31px;
+        border-style: none;
+        margin: 39px 0 0;
+      }
+    }
+  }
+
+  footer {
+    @include simple-flex(center, center);
+    background-color: $background-primary;
+    color: $text-color-terciary;
+    padding: 7px 0;
     width: 100%;
-  }
-}
-
-main{
-  @include simple-flex(center, center );
-  height: 100%;
-  padding: 24px 16px 39px;
-  background-color: red;
-
-  .title_section{
-    font-size: 32px;
-    color:$text-color_section;
-  }
-  .page_container{
-    @include simple-flex(center, center, center);
-
-    background-color:blue;
-    
+    flex-shrink: 0;
   }
 }
