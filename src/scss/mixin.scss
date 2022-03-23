@@ -1,0 +1,11 @@
+@mixin simple-flex($justify: flex-start, $align: flex-start, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@mixin font-face($Weight: normal) {
+  font-family: Open Sans;
+  src: url('../fonts/Open_Sans/static/OpenSans/OpenSans-'+ $weight);
+}
