@@ -22,17 +22,20 @@ function listProducts() {
     <div class="card-product" ${index}>
       <img class="img-product" src=".${produto.image}"/>
       <p class="name-product">${produto.name}</p>
+      <div class="price">
       <p class="price-product">R$ ${replaceSeparator(
         produto.price.toFixed(2)
       )}</p>
       <p class="share">até ${produto.parcelamento[0]}x de R$${replaceSeparator(
       produto.parcelamento[1].toFixed(2)
     )}</p>
-      <button class="btn-buy">COMPRAR</button> 
+    </div>
+      <button class="btn-buy">COMPRAR</button>
     </div>
 
     `;
   });
+  console.log(products);
   document.querySelector(".container-products").innerHTML = teste.join("");
 }
 
