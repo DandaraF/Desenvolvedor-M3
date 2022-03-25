@@ -15,11 +15,12 @@
   </head>
 
   <body>
+    <!-- -------------------------Modais--------------------------- -->
     <!-- <div class="modal">
       <header class="header-modal">
         <div class="container-header-modal">
           <p class="text-option">Ordenar</p>
-          <input type="image" src="img/x.svg"/>
+          <input type="image" src="img/x.svg" />
         </div>
       </header>
       <div class="options-menu-modal">
@@ -33,42 +34,55 @@
       <header class="header-modal">
         <div class="container-header-modal">
           <p class="text-option">Filtrar</p>
-          <input type="image" src="img/x.svg"/>
+          <input type="image" src="img/x.svg" />
         </div>
       </header>
       <div class="options-menu-modal">
         <div class="item-filter">
           <p>Cores</p>
-          <input type="image" src="img/V.svg"/>
+          <input type="image" src="img/V.svg" />
         </div>
-        <div class="item-filter ">
+        <div class="item-filter">
           <p>Tamanhos</p>
-          <input type="image" src="img/V.svg"/>
+          <input type="image" src="img/V.svg" />
         </div>
-        <div class="item-filter ">
+        <div class="item-filter">
           <p>Faixa de Preço</p>
-          <input type="image" src="img/V.svg"/>
+          <input type="image" src="img/V.svg" />
         </div>
       </div>
     </div> -->
 
+    <!-- --------------------- HEADER ------------------------------ -->
+    <header>
+      <div class="container-header">
+        <img src="./img/logo-m3.png" alt="logo m3" />
+        <img src="./img/icon.svg" alt="icone" />
+      </div>
+    </header>
     <div class="container">
-      <!-- --------------------- HEADER ------------------------------ -->
-      <header>
-        <div class="container-header">
-          <img src="./img/logo-m3.png" alt="logo m3" />
-          <img src="./img/icon.svg" alt="icone" />
-        </div>
-      </header>
-
       <!-- --------------------- NAV --------------------------------- -->
       <nav>
-        <div class="title-nav">
-          <p>Blusas</p>
-        </div>
-        <div class="filters">
-          <div class="item-filters">Filtrar</div>
-          <div class="item-filters">Ordenar</div>
+        <div class="container-nav">
+          <div class="title-nav">
+            <p>Blusas</p>
+          </div>
+          <div class="orderby">
+            <select name="" id="select-orderby">
+              <option value="recent" class="sub-item-orderby" selected disabled>
+                Ordenar por:
+              </option>
+              <option value="recent" class="sub-item-orderby" id="recent">
+                Mais recentes
+              </option>
+              <option value="cheap" class="sub-item-orderby" id="cheap">
+                Menor preço
+              </option>
+              <option value="expensive" class="sub-item-orderby" id="expensive">
+                Maior preço
+              </option>
+            </select>
+          </div>
         </div>
       </nav>
 
