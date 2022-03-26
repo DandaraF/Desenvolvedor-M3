@@ -40,4 +40,4 @@ function listProducts() {
   document.querySelector(".container-products").innerHTML = product.join("");
 }
 
-// listProducts();
+listProducts();
