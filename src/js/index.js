@@ -17,7 +17,7 @@ function replaceSeparator(price) {
 
 function listProducts() {
   products = getAllProducts();
-  const teste = products.map((produto, index) => {
+  const product = products.map((produto, index) => {
     return `
       <div class="card-product" ${index}>
         <img class="img-product" src=".${produto.image}"/>
@@ -37,7 +37,7 @@ function listProducts() {
     `;
   });
   console.log(products);
-  document.querySelector(".container-products").innerHTML = teste.join("");
+  document.querySelector(".container-products").innerHTML = product.join("");
 }
 
-listProducts();
+// listProducts();

@@ -16,45 +16,83 @@
 
   <body>
     <!-- -------------------------Modais--------------------------- -->
-    <!-- <div class="modal">
+   
+    <!-- ---------------Modal Order ------------------- -->
+    <!-- <div class="modal" id="modal-order">
       <header class="header-modal">
         <div class="container-header-modal">
-          <p class="text-option">Ordenar</p>
-          <input type="image" src="img/x.svg" />
+          <p class="title">Ordernar</p>
+          <input id="close-modal" type="image" src="img/x.svg" />
         </div>
       </header>
-      <div class="options-menu-modal">
-        <div class="item-order">Mais recente</div>
-        <div class="item-order">Maior preço</div>
-        <div class="item-order">Menor preço</div>
+
+      <div class="filters">
+        <div id="recent" class="item-order">
+          <p class="title-filter">Mais recente</p>
+  
+        </div>
+        <div id="cheap" class="item-order">
+          <p class="title-order">Maior preço</p>
+        </div>
+        <div id="expensive" class="item-order">
+           <p class="title-order">Menor preço</p>
+        </div>
+
       </div>
     </div> -->
 
-    <!-- <div class="modal">
+    <!-- ---------------Modal filter ------------------- -->
+    <div class="modal" id="modal-filter">
       <header class="header-modal">
         <div class="container-header-modal">
-          <p class="text-option">Filtrar</p>
-          <input type="image" src="img/x.svg" />
+          <p class="title">Filtrar</p>
+          <input id="close-modal" type="image" src="img/x.svg" />
         </div>
       </header>
-      <div class="options-menu-modal">
-        <div class="item-filter">
-          <p>Cores</p>
-          <input type="image" src="img/V.svg" />
+
+      <div class="filters">
+        <div id="colors" class="item-filters">
+          <div class="option">
+            <p class="title-filter">Cores</p>
+            <input id="open-filter-colors" type="image" src="img/V.svg"  />
+          </div>
+
+          <!-- ---------------------CORES--------------------- -->
+         <div id="checkbox">
+            <div class="item-checkbox">
+              <input class="input-checkbox" type="checkbox" id="amarelo" name="amarelo" value="amarelo">
+              <label class="label-checkbox" for="amarelo">Amarelo </label>
+           </div> 
+           <div class="item-checkbox">
+            <input class="input-checkbox" type="checkbox" id="verde" name="amarelo" value="amarelo">
+            <label class="label-checkbox" for="verde">Verde </label>
+         </div>
+            
         </div>
-        <div class="item-filter">
-          <p>Tamanhos</p>
-          <input type="image" src="img/V.svg" />
+        <!-- ----------------------------------------------- -->
+        
         </div>
-        <div class="item-filter">
-          <p>Faixa de Preço</p>
-          <input type="image" src="img/V.svg" />
+
+       
+
+
+
+        <!-- <div id="size" class="item-filters">
+          <p class="title-filter">Tamanhos</p>
+          <input id="open-filter-size" type="image" src="img/V.svg"  />
         </div>
+        
+        <div id="range-price" class="item-filters">
+           <p class="title-filter">Faixa de Preço</p>
+           <input id="open-filter-range" type="image" src="img/V.svg"  />
+        </div> -->
+
       </div>
-    </div> -->
+      
+    </div>
 
     <!-- --------------------- HEADER ------------------------------ -->
-    <header>
+    <header class="header-page">
       <div class="container-header">
         <img src="./img/logo-m3.png" alt="logo m3" />
         <img src="./img/icon.svg" alt="icone" />
@@ -62,8 +100,8 @@
     </header>
     <div class="container">
       <!-- --------------------- NAV --------------------------------- -->
-      <nav>
-        <div class="container-nav">
+      <!-- <nav>
+        <div id="container-nav-desktop">
           <div class="title-nav">
             <p>Blusas</p>
           </div>
@@ -83,7 +121,15 @@
               </option>
             </select>
           </div>
-        </div>
+        </div> -->
+
+        <!-- <div id="container-nav-mobile">
+          <div class="title-nav-mobile">Blusas</div>
+          <div class="filters">
+            <div id="filter">Filtrar</div>
+            <div id="order">Ordenar</div>
+          </div>
+        </div> -->
       </nav>
 
       <!-- --------------------- MAIN --------------------------------- -->
@@ -99,6 +145,8 @@
         <p>M3: Implantação de E-commerce VTEX</p>
       </footer>
     </div>
+
+    
   </body>
 
   <script src="bundle.js"></script>
