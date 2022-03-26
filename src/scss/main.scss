@@ -49,11 +49,13 @@ html {
       .item-filters {
         @include simple-flex(space-between, center, column);
         width: 100%;
-        text-transform: uppercase;
 
         .option {
           @include simple-flex(space-between, center);
           width: 100%;
+        }
+        .title-filter {
+          text-transform: uppercase;
         }
       }
       .item-order {
@@ -64,7 +66,7 @@ html {
         @include simple-flex(flex-start, flex-start, column);
         margin: 20px;
         width: 100%;
-        gap: 16px;
+        gap: 3px;
 
         .item-checkbox {
           display: flex;
@@ -73,7 +75,10 @@ html {
           width: 100%;
           font-size: 14px;
           color: $text-color-primary;
-          text-transform: capitalize;
+
+          .world-capitalize {
+            text-transform: capitalize;
+          }
 
           .input-checkbox {
             appearance: none;
