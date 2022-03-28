@@ -4,8 +4,3 @@
   align-items: $align;
   flex-direction: $direction;
 }
-
-@mixin font-face($Weight: normal) {
-  font-family: Open Sans;
-  src: url('../fonts/Open_Sans/static/OpenSans/OpenSans-'+ $weight);
-}
