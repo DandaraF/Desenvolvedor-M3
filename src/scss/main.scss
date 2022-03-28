@@ -267,7 +267,7 @@ html {
           }
       }
 
-      .filters {
+      .filters-mobile {
           @include simple-flex(flex-start, flex-start, column);
           padding: 30px 16px;
           gap: 30px;
@@ -281,8 +281,8 @@ html {
             width: 100%;
             gap:30px;
 
-            .option {
-              @include simple-flex(space-between, center);
+            .colors {
+              // display: flex;
               width: 100%;
             }
             .title-filter {
