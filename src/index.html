@@ -6,42 +6,250 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Desenvolvedor M3</title>
     <link rel="stylesheet" href="main.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
-    <header>
+
+  <div class="container"> 
+
+
+    <!-- --------------------- HEADER ------------------------------ -->
+    <header class="header-page">
       <div class="container-header">
         <img src="./img/logo-m3.png" alt="logo m3" />
         <img src="./img/icon.svg" alt="icone" />
       </div>
     </header>
+    
+      <!-- --------------------- NAV --------------------------------- -->
+      <nav>
+        <div id="container-nav-desktop">
+          <div class="title-nav">
+            <p>Blusas</p>
+          </div>
+          <div class="orderby">
+            <select name="" id="select-orderby">
+              <option value="recent" class="sub-item-orderby" selected disabled>
+                Ordenar por:
+              </option>
+              <option value="recent" class="sub-item-orderby" id="recent">
+                Mais recentes
+              </option>
+              <option value="cheap" class="sub-item-orderby" id="cheap">
+                Menor preço
+              </option>
+              <option value="expensive" class="sub-item-orderby" id="expensive">
+                Maior preço
+              </option>
+            </select>
+          </div>
+        </div> 
 
-    <main>
-      <div class="page-container">
-        <h1 class="title-section">Blusas</h1>
+        <div id="container-nav-mobile">
+          <div class="title-nav-mobile">Blusas</div>
+          <div class="filters">
+            <div id="filter">Filtrar</div>
+            <div id="order">Ordenar</div>
+          </div>
+        </div>
+      </nav>
 
-        <div class="menu">
-          <a class="item-menu remove-border">Filtrar<a>
-          <a class="item-menu">Ordenar</a>
+      <!-- --------------------- MAIN --------------------------------- -->
+      <main>
+        <aside>
+          <div class="filter-desktop"> 
+
+            <div id="colors" class="itens-filter">
+              <div class="option-filter">
+                <p class="title-filter">CORES</p>
+              </div>
+             
+              
+              <div class="option-filter">
+                <p class="title-filter">TAMANHOS</p>
+              </div>
+              <div class="option-filter">
+                <p class="title-filter">FAIXA DE PREÇO</p>
+              </div>
+            </div>
+
+          </div>
+
+
+
+        </aside>
+
+        <div class="container-page">
+          <div class="container-products"></div>
+          <button class="btn_more">CARREGAR MAIS</button>
+        </div>
+      </main>
+
+      <!-- --------------------- FOOTER ------------------------------ -->
+      <footer>
+        <p>M3: Implantação de E-commerce VTEX</p>
+      </footer>
+
+       <!-- -------------------------Modais--------------------------- -->
+
+    <!-- ---------------Modal Order ------------------- -->
+    <!-- <div class="modal" id="modal-order">
+      <header class="header-modal">
+        <div class="container-header-modal">
+          <p class="title">Ordernar</p>
+          <input id="close-modal" type="image" src="img/x.svg" />
+        </div>
+      </header>
+
+      <div class="filters">
+        <div id="recent" class="item-order">
+          <p class="title-filter">Mais recente</p>
+  
+        </div>
+        <div id="cheap" class="item-order">
+          <p class="title-order">Maior preço</p>
+        </div>
+        <div id="expensive" class="item-order">
+           <p class="title-order">Menor preço</p>
         </div>
 
-        <div class="container-products">
-         
+      </div>
+    </div> -->
+
+    <!-- ---------------Modal filter ------------------- -->
+    <!-- <div class="modal" id="modal-filter">
+      <header class="header-modal">
+        <div class="container-header-modal">
+          <p class="title">Filtrar</p>
+          <input id="close-modal" type="image" src="img/x.svg" />
         </div>
+      </header>
 
+      <div class="filters">
+        <div id="colors" class="item-filters">
+          <div class="option">
+            <p class="title-filter">Cores</p>
+            <input id="open-filter-colors" type="image" src="img/V.svg" />
+          </div>
+          <div class="option">
+            <p class="title-filter">Tamanhos</p>
+            <input id="open-filter-colors" type="image" src="img/V.svg" />
+          </div>
+          <div class="option">
+              <p class="title-filter">Faixa de Preço</p>
+              <input id="open-filter-colors" type="image" src="img/V.svg" />
+          </div>
+        </div>
+      </div>
 
-        <button class="btn_more">CARREGAR MAIS</button>
-      </div> 
-    </main>
-
-    <footer>
-      <p>M3: Implantação de E-commerce VTEX</p>
-    </footer>
+      <div class="btn-filters">
+        <button id="btn-apply" class="btn-filter">Aplicar</button>
+        <button id="btn-clean" class="btn-filter">Limpar</button>
+      </div>
+    </div>-->
+    </div>
     
   </body>
 
   <script src="bundle.js"></script>
 </html>
+
+<!-- ---------------------CORES--------------------- -->
+<!-- <div id="checkbox-colors" class="checkbox">
+  <div class="item-checkbox">
+    <input class="input-checkbox" type="checkbox" id="amarelo" name="amarelo" value="amarelo">
+    <label class="label-checkbox world-capitalize" for="amarelo">Amarelo </label>
+  </div> 
+  <div class="item-checkbox">
+    <input class="input-checkbox" type="checkbox" id="amarelo" name="amarelo" value="amarelo">
+    <label class="label-checkbox world-capitalize" for="amarelo">Amarelo </label>
+  </div> 
+</div> -->
+
+
+
+<!-- ---------------------TAMANHOS--------------------- -->
+<!-- <div id="sizes-fields">
+  <div class="size-field">
+   <p>P</p>
+  </div>          
+</div> -->
+
+
+<!-- ---------------------FAIXA DE PREÇO--------------------- -->
+<!-- <div id="checkbox-range" class="price-range checkbox">
+  <div class="item-checkbox">
+    <input class="input-checkbox" type="checkbox" id="amarelo" name="amarelo" value="amarelo">
+    <label class="label-checkbox" for="amarelo">de R$0 até R$50</label>
+  </div> 
+  <div class="item-checkbox">
+    <input class="input-checkbox " type="checkbox" id="amarelo" name="amarelo" value="amarelo">
+    <label class="label-checkbox" for="amarelo">de R$51 até R$150</label>
+  </div> 
+
+</div> -->
+
+
+
+
+
+<!-- ---------------- desktop ------------------------------
+
+     
+<div class="filters">
+  <div id="colors" class="item-filters">
+
+    <div class="option">
+      <p class="title-filter">Cores</p>
+    </div>
+
+    <div id="checkbox-colors" class="checkbox">
+      <div class="item-checkbox">
+        <input class="input-checkbox" type="checkbox" id="amarelo" name="amarelo" value="amarelo">
+        <label class="label-checkbox world-capitalize" for="amarelo">Amarelo </label>
+      </div> 
+      <div class="item-checkbox">
+        <input class="input-checkbox" type="checkbox" id="amarelo" name="amarelo" value="amarelo">
+        <label class="label-checkbox world-capitalize" for="amarelo">Amarelo </label>
+      </div> 
+    </div>
+
+    <div class="option">
+      <p class="title-filter">Tamanhos</p>
+    </div>
+
+    <div id="sizes-fields">
+      <div class="size-field">
+        <p>P</p>
+      </div>
+      <div class="size-field">
+        <p>m</p>
+      </div>  
+      <div class="size-field">
+        <p>g</p>
+      </div>       
+    </div>
+
+    <div class="option">
+        <p class="title-filter">Faixa de Preço</p>
+    </div>
+
+    <div id="checkbox-range" class="price-range checkbox">
+      <div class="item-checkbox">
+        <input class="input-checkbox" type="checkbox" id="amarelo" name="amarelo" value="amarelo">
+        <label class="label-checkbox" for="amarelo">de R$0 até R$50</label>
+      </div> 
+      <div class="item-checkbox">
+        <input class="input-checkbox " type="checkbox" id="amarelo" name="amarelo" value="amarelo">
+        <label class="label-checkbox" for="amarelo">de R$51 até R$150</label>
+      </div> 
+    </div>
+
+  </div>
+</div> -->

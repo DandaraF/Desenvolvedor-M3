@@ -17,23 +17,27 @@ function replaceSeparator(price) {
 
 function listProducts() {
   products = getAllProducts();
-  const teste = products.map((produto, index) => {
+  const product = products.map((produto, index) => {
     return `
-    <div class="card-product" ${index}>
-      <img class="img-product" src=".${produto.image}"/>
-      <p class="name-product">${produto.name}</p>
-      <p class="price-product">R$ ${replaceSeparator(
-        produto.price.toFixed(2)
-      )}</p>
-      <p class="share">até ${produto.parcelamento[0]}x de R$${replaceSeparator(
-      produto.parcelamento[1].toFixed(2)
-    )}</p>
-      <button class="btn-buy">COMPRAR</button> 
-    </div>
+      <div class="card-product" ${index}>
+        <img class="img-product" src=".${produto.image}"/>
+        <p class="name-product">${produto.name}</p>
+        <div class="container-price">
+        <p class="price-product">R$ ${replaceSeparator(
+          produto.price.toFixed(2)
+        )}</p>
+        <p class="share">até ${
+          produto.parcelamento[0]
+        }x de R$${replaceSeparator(produto.parcelamento[1].toFixed(2))}</p>
+      </div>
+        <button class="btn-buy">COMPRAR</button>
+      </div>
+
 
     `;
   });
-  document.querySelector(".container-products").innerHTML = teste.join("");
+  console.log(products);
+  document.querySelector(".container-products").innerHTML = product.join("");
 }
 
 listProducts();
