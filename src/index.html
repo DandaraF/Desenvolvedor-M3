@@ -54,8 +54,8 @@
         <div id="container-nav-mobile">
           <div class="title-nav-mobile">Blusas</div>
           <div class="filters">
-            <div id="filter" onclick="OpenFilter()">Filtrar</div>
-            <div id="order">Ordenar</div>
+            <div id="filter" onclick="OpenModal('modal-filter')">Filtrar</div>
+            <div id="order" onclick="OpenModal('modal-order')">Ordenar</div>
           </div>
         </div>
       </nav>
@@ -98,21 +98,19 @@
         <p>M3: Implantação de E-commerce VTEX</p>
       </footer>
 
-       <!-- -------------------------Modais--------------------------- -->
-
     <!-- ---------------Modal Order ------------------- -->
-    <!-- <div class="modal" id="modal-order">
+    <div class="modal" id="modal-order">
       <header class="header-modal">
         <div class="container-header-modal">
           <p class="title">Ordernar</p>
-          <input id="close-modal" type="image" src="img/x.svg" />
+          <input id="close-modal" type="image" src="img/x.svg"  onclick="CloseModal('modal-order')"/>
         </div>
       </header>
 
-      <div class="filters">
+      <div class="order-mobile">
+
         <div id="recent" class="item-order">
           <p class="title-filter">Mais recente</p>
-  
         </div>
         <div id="cheap" class="item-order">
           <p class="title-order">Maior preço</p>
@@ -122,14 +120,16 @@
         </div>
 
       </div>
-    </div> -->
+      
+
+    </div>
 
     <!-- ---------------Modal filter ------------------- -->
     <div class="modal" id="modal-filter">
       <header class="header-modal">
         <div class="container-header-modal">
           <p class="title">Filtrar</p>
-          <input id="close-modal" type="image" src="img/x.svg" />
+          <input id="close-modal" type="image" src="img/x.svg" onclick="CloseModal('modal-filter')" />
         </div>
       </header>
 
@@ -149,7 +149,6 @@
           </div>
           <div id="sizes"></div>
 
-
           <div class="option-filter-mobile" onclick="FilterRangePrice('#price')">
             <p class="title-filter-mobile">FAIXA DE PREÇO</p>
             <input id="open-filter-colors" type="image" src="img/V.svg" />
@@ -166,6 +165,15 @@
     </div>
 
   <script>
+    function OpenModal(name){
+      const modal = document.getElementById(name);
+      modal.style.display ="flex";
+    }
+
+    function CloseModal(name){
+      const modal = document.getElementById(name);
+      modal.style.display ="none";
+    }
 
     function FilterColors(item) {
       colors = ["Amarelo", "Azul", "Branco", "Cinza", "Laranja", "Verde", "Vermelho", "Preto", "Rosa", "Vinho"];
@@ -209,6 +217,8 @@
       });
       document.querySelector(item).innerHTML = price.join("");
     }
+    
+
     FilterColors('#itens-colors');
     FilterSize('#sizes-fields');
     FilterRangePrice('#itens-range-price');
@@ -219,97 +229,3 @@
   <script src="bundle.js"></script>
   
 </html>
-
-<!-- ---------------------CORES--------------------- -->
-<!-- <div id="checkbox-colors" class="checkbox">
-  <div class="item-checkbox">
-    <input class="input-checkbox" type="checkbox" id="amarelo" name="amarelo" value="amarelo">
-    <label class="label-checkbox world-capitalize" for="amarelo">Amarelo </label>
-  </div> 
-  <div class="item-checkbox">
-    <input class="input-checkbox" type="checkbox" id="amarelo" name="amarelo" value="amarelo">
-    <label class="label-checkbox world-capitalize" for="amarelo">Amarelo </label>
-  </div> 
-</div> -->
-
-
-
-<!-- ---------------------TAMANHOS--------------------- -->
-<!-- <div id="sizes-fields">
-  <div class="size-field">
-   <p>P</p>
-  </div>          
-</div> -->
-
-
-<!-- ---------------------FAIXA DE PREÇO--------------------- -->
-<!-- <div id="checkbox-range" class="price-range checkbox">
-  <div class="item-checkbox">
-    <input class="input-checkbox" type="checkbox" id="amarelo" name="amarelo" value="amarelo">
-    <label class="label-checkbox" for="amarelo">de R$0 até R$50</label>
-  </div> 
-  <div class="item-checkbox">
-    <input class="input-checkbox " type="checkbox" id="amarelo" name="amarelo" value="amarelo">
-    <label class="label-checkbox" for="amarelo">de R$51 até R$150</label>
-  </div> 
-
-</div> -->
-
-
-
-
-
-<!-- ---------------- desktop ------------------------------
-
-     
-<div class="filters">
-  <div id="colors" class="item-filters">
-
-    <div class="option">
-      <p class="title-filter">Cores</p>
-    </div>
-
-    <div id="checkbox-colors" class="checkbox">
-      <div class="item-checkbox">
-        <input class="input-checkbox" type="checkbox" id="amarelo" name="amarelo" value="amarelo">
-        <label class="label-checkbox world-capitalize" for="amarelo">Amarelo </label>
-      </div> 
-      <div class="item-checkbox">
-        <input class="input-checkbox" type="checkbox" id="amarelo" name="amarelo" value="amarelo">
-        <label class="label-checkbox world-capitalize" for="amarelo">Amarelo </label>
-      </div> 
-    </div>
-
-    <div class="option">
-      <p class="title-filter">Tamanhos</p>
-    </div>
-
-    <div id="sizes-fields">
-      <div class="size-field">
-        <p>P</p>
-      </div>
-      <div class="size-field">
-        <p>m</p>
-      </div>  
-      <div class="size-field">
-        <p>g</p>
-      </div>       
-    </div>
-
-    <div class="option">
-        <p class="title-filter">Faixa de Preço</p>
-    </div>
-
-    <div id="checkbox-range" class="price-range checkbox">
-      <div class="item-checkbox">
-        <input class="input-checkbox" type="checkbox" id="amarelo" name="amarelo" value="amarelo">
-        <label class="label-checkbox" for="amarelo">de R$0 até R$50</label>
-      </div> 
-      <div class="item-checkbox">
-        <input class="input-checkbox " type="checkbox" id="amarelo" name="amarelo" value="amarelo">
-        <label class="label-checkbox" for="amarelo">de R$51 até R$150</label>
-      </div> 
-    </div>
-
-  </div>
-</div> -->
