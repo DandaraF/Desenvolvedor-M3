@@ -54,7 +54,7 @@
         <div id="container-nav-mobile">
           <div class="title-nav-mobile">Blusas</div>
           <div class="filters">
-            <div id="filter">Filtrar</div>
+            <div id="filter" onclick="OpenFilter()">Filtrar</div>
             <div id="order">Ordenar</div>
           </div>
         </div>
@@ -65,23 +65,25 @@
         <aside>
           <div class="filter-desktop"> 
 
-            <div id="colors" class="itens-filter">
-              <div class="option-filter">
+            <div id="filter" class="itens-filter" >
+              <div class="option-filter" >
                 <p class="title-filter">CORES</p>
               </div>
-             
+              <div id="itens-colors" ></div>
               
               <div class="option-filter">
                 <p class="title-filter">TAMANHOS</p>
               </div>
+              <div id="sizes-fields"></div>
+              
               <div class="option-filter">
                 <p class="title-filter">FAIXA DE PREÇO</p>
               </div>
+              <div id="itens-range-price"></div>
+              
             </div>
 
           </div>
-
-
 
         </aside>
 
@@ -123,7 +125,7 @@
     </div> -->
 
     <!-- ---------------Modal filter ------------------- -->
-    <!-- <div class="modal" id="modal-filter">
+    <div class="modal" id="modal-filter">
       <header class="header-modal">
         <div class="container-header-modal">
           <p class="title">Filtrar</p>
@@ -131,33 +133,91 @@
         </div>
       </header>
 
-      <div class="filters">
-        <div id="colors" class="item-filters">
-          <div class="option">
-            <p class="title-filter">Cores</p>
+      <div class="filters-mobile"> 
+
+        <div id="filter" class="itens-filter" >
+
+          <div class="option-filter-mobile" onclick="FilterColors('#colors')" >
+            <p class="title-filter-mobile">CORES</p>
             <input id="open-filter-colors" type="image" src="img/V.svg" />
           </div>
-          <div class="option">
-            <p class="title-filter">Tamanhos</p>
+          <div id="colors" ></div>
+          
+          <div class="option-filter-mobile" onclick="FilterSize('#sizes')">
+            <p class="title-filter-mobile">TAMANHOS</p>
             <input id="open-filter-colors" type="image" src="img/V.svg" />
           </div>
-          <div class="option">
-              <p class="title-filter">Faixa de Preço</p>
-              <input id="open-filter-colors" type="image" src="img/V.svg" />
+          <div id="sizes"></div>
+
+
+          <div class="option-filter-mobile" onclick="FilterRangePrice('#price')">
+            <p class="title-filter-mobile">FAIXA DE PREÇO</p>
+            <input id="open-filter-colors" type="image" src="img/V.svg" />
           </div>
+          <div id="price"></div>
+
+        </div>
+
+        <div class="btn-filters">
+          <button id="btn-apply" class="btn-filter">Aplicar</button>
+          <button id="btn-clean" class="btn-filter">Limpar</button>
         </div>
       </div>
-
-      <div class="btn-filters">
-        <button id="btn-apply" class="btn-filter">Aplicar</button>
-        <button id="btn-clean" class="btn-filter">Limpar</button>
-      </div>
-    </div>-->
     </div>
+
+  <script>
+
+    function FilterColors(item) {
+      colors = ["Amarelo", "Azul", "Branco", "Cinza", "Laranja", "Verde", "Vermelho", "Preto", "Rosa", "Vinho"];
+      const color = colors.map((color, index)=>{
+        return `
+        <div id="checkbox-colors" class="checkbox">
+          <div class="item-checkbox" id="${index}">
+            <input class="input-checkbox" type="checkbox" id="${color}" name="${color}" value="${color}">
+            <label class="label-checkbox world-capitalize" for="${color}">${color} </label>
+          </div> 
+        </div>
+        `;
+        
+      });
+      document.querySelector(item).innerHTML = color.join("");
+    }
+
+    function FilterSize(item){
+      sizes = ["P", "M", "G", "GG", "U", "36", "38", "40", "42", "44", "46"];
+      const size = sizes.map((size, index)=>{
+        return `
+            <div class="size-field" id="index">
+              <p>${size}</p>
+            </div>          
+        `;
+      });
+      document.querySelector(item).innerHTML = size.join("");
+    }
+   
+    function FilterRangePrice(item){
+      prices = ["de R$0 até R$50", "de R$51 até R$150", "de R$151 até R$300","de R$301 até R$500","a partir de R$500"];
+      const price = prices.map((price, index)=>{
+        return `
+          <div class="checkbox checkbox-price" id="${index}">
+            <div class="item-checkbox" >
+              <input class="input-checkbox" type="checkbox" id="${price}" name="${price}" value="${price}">
+              <label class="label-checkbox" for="${price}">${price}</label>
+            </div>
+          </div>  
+        `;
+      });
+      document.querySelector(item).innerHTML = price.join("");
+    }
+    FilterColors('#itens-colors');
+    FilterSize('#sizes-fields');
+    FilterRangePrice('#itens-range-price');
+
+    </script>
     
   </body>
-
   <script src="bundle.js"></script>
+  
 </html>
 
 <!-- ---------------------CORES--------------------- -->
