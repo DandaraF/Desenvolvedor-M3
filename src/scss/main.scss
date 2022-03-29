@@ -128,7 +128,7 @@ html {
         @media (min-width: 768px) {
           margin: 54px 0 35px;
         }
-
+        
         .filter-desktop{
           display: none;
           @media (min-width: 768px) {
@@ -140,13 +140,90 @@ html {
           .itens-filter{
             display: flex;
             flex-direction: column;
-            gap:15px;
+            gap:20px;
+            
             .title-filter{
-              color: $text-color_section;
-            }  
+                color: $text-color_section;
+            }
+            
+            
+
+            .checkbox {
+              @include simple-flex(flex-start, flex-start, column);
+              width: 100%;
+
+              .item-checkbox {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                width: 100%;
+                font-size: 14px;
+                color: $text-color-primary;
+                .input-checkbox {
+                  appearance: none;
+                  position: relative;
+                  display: flex;
+                  outline: none;
+                  align-items: center;
+                  justify-content: center;
+                  width: 16px;
+                  height: 16px;
+                  cursor: pointer;
+                  border: 1px solid $background-secondary;
+                  &::before {
+                    content: "";
+                    position: absolute;
+                    width: 16px;
+                    height: 16px;
+                    box-sizing: border-box;
+                    border: 1px solid $background-primary 50%;
+                  }
+  
+                  &:checked::before {
+                    background: url("../img/retangulo.svg") no-repeat;
+                    background-position: center;
+                  }
+                }
+                .label-checkbox{
+                  cursor: pointer;
+                }
+              }
+            }
+
+            #sizes-fields{
+              @include simple-flex(flex-start, flex-start);
+              flex-wrap: wrap;
+              width: 154px;
+              height: 112;
+              gap: 6px;
+              
+            
+              .size-field{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid ;
+                border-color: $background-primary;
+                width: 32px;
+                height: 32px;
+                font-size: 16px; 
+                cursor: pointer;   
+                &:hover{
+                  border-color: $background-terciary;
+                }           
+              }
+            }
+
+            #itens-range-price{
+              .checkbox-price{
+                padding-bottom: 4px;                
+              }
+
+            }
+
           }
         }
-
+        
         .container-page {
           @include simple-flex(space-around, center, column);
           padding: 0 16px;
@@ -246,12 +323,13 @@ html {
       background-color: $background-page;
       z-index: 10;
       
+      
      
       .header-modal {
           width: 100%;
           box-sizing: border-box;
           border-bottom: 1px solid $background-secondary;
-
+         
           .container-header-modal {
             @include simple-flex(space-between, center);
             padding: 16px;
@@ -275,29 +353,16 @@ html {
           font-size: 24px;
           flex: 1 0 auto;
 
-          .item-filters {
+          .itens-filter {
             display: flex;
             flex-direction: column;
             width: 100%;
-            gap:30px;
+            gap:25px;
 
-            .colors {
-              // display: flex;
-              width: 100%;
-            }
-            .title-filter {
-              text-transform: uppercase;
-            }
-            .item-order {
-              color: $text-color-primary;
-            }
             .checkbox {
-              @include simple-flex(flex-start, flex-start, column);
+              @include simple-flex(space-around, flex-start, column);
               width: 100%;
-              gap: 3px;
-              margin-top: -11px;
-
-
+              padding-bottom: 3px;
               .item-checkbox {
                 display: flex;
                 align-items: center;
@@ -305,7 +370,7 @@ html {
                 width: 100%;
                 font-size: 14px;
                 color: $text-color-primary;
-
+  
                 .input-checkbox {
                   appearance: none;
                   position: relative;
@@ -324,7 +389,7 @@ html {
                     box-sizing: border-box;
                     border: 1px solid $background-primary 50%;
                   }
-
+  
                   &:checked::before {
                     background: url("../img/retangulo.svg") no-repeat;
                     background-position: center;
@@ -332,26 +397,37 @@ html {
                 }
               }
             }
-            #sizes-fields{
+
+            #sizes{
               @include simple-flex(flex-start, flex-start);
               flex-wrap: wrap;
               width: 154px;
               height: 112;
               gap: 6px;
+              
             
               .size-field{
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                border: 1px solid $background-primary;
+                border: 1px solid ;
+                border-color: $background-primary;
                 width: 32px;
                 height: 32px;
-                font-size: 16px;
-                text-transform: uppercase;
-              
+                font-size: 16px; 
+                cursor: pointer;   
+                &:hover{
+                  border-color: $background-terciary;
+                }           
               }
             }
-        
+
+            .option-filter-mobile{
+              display: flex;
+              justify-content: space-between;
+            }
+
+  
     } } 
       
       .btn-filters{

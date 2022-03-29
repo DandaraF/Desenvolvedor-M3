@@ -40,23 +40,6 @@ function listProducts() {
   document.querySelector(".container-products").innerHTML = product.join("");
 }
 
-function FilterColors() {
-  colors = ["Amarelo", "Azul", "Branco", "Cinza", "Laranja", "Verde", "Vermelho", "Preto", "Rosa", "Vinho"];
-  const color = colors.map((color, index)=>{
-    return `
-    <div id="checkbox-colors" class="checkbox">
-      <div class="item-checkbox" id=${index}>
-        <input class="input-checkbox" type="checkbox" id=${color} name=${color}" value=${color}>
-        <label class="label-checkbox world-capitalize" for=${color}>${color} </label>
-      </div> 
-    </div>
-    `;
-    
-  });
-  document.querySelector("#itens-colors").innerHTML = color.join("");
-  document.querySelector("#colors").innerHTML = color.join("");
-}
 
 
 listProducts();
-FilterColors();
