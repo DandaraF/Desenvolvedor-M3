@@ -146,8 +146,6 @@ html {
                 color: $text-color_section;
             }
             
-            
-
             .checkbox {
               @include simple-flex(flex-start, flex-start, column);
               width: 100%;
@@ -311,7 +309,13 @@ html {
       }
     }
 
+    #modal-filter{
+      display: none;
+    }
 
+    #modal-order{
+      display: none;
+    }
     .modal {
       display: flex;
       flex-direction: column;
@@ -324,7 +328,6 @@ html {
       z-index: 10;
       
       
-     
       .header-modal {
           width: 100%;
           box-sizing: border-box;
@@ -345,6 +348,16 @@ html {
           }
       }
 
+      
+      .order-mobile{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        width: 100%;
+        font-size: 22px;
+        padding: 30px 0 0 16px;
+      }
+
       .filters-mobile {
           @include simple-flex(flex-start, flex-start, column);
           padding: 30px 16px;
@@ -352,13 +365,11 @@ html {
           color: $text-color-secondary;
           font-size: 24px;
           flex: 1 0 auto;
-
           .itens-filter {
             display: flex;
             flex-direction: column;
             width: 100%;
             gap:25px;
-
             .checkbox {
               @include simple-flex(space-around, flex-start, column);
               width: 100%;
@@ -397,7 +408,6 @@ html {
                 }
               }
             }
-
             #sizes{
               @include simple-flex(flex-start, flex-start);
               flex-wrap: wrap;
@@ -421,15 +431,16 @@ html {
                 }           
               }
             }
-
             .option-filter-mobile{
               display: flex;
               justify-content: space-between;
             }
-
+            .item-order{
+              font-size: 22px;
+            }
   
-    } } 
-      
+        }
+      } 
       .btn-filters{
         display: flex;
         align-items: center;
@@ -455,6 +466,7 @@ html {
           border: 1px solid $background-secondary;
         }
       }
+      
     }
   }
 }
